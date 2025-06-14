@@ -1,6 +1,2 @@
-setuptools
-numpy
-pandas
-python-dateutil
-pytz
-streamlit
+pandas==2.0.3
+streamlit>=1.26.0
