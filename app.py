@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 
 st.set_page_config(
     page_title="H1 Returns per Evento",
@@ -11,7 +10,7 @@ st.title("Report H1 dei ritorni pre- e post-evento")
 def parse_value(x):
     """Da “1.9%”→0.019, “231K”→231000, “6.888M”→6888000, “54.1”→54.1"""
     if pd.isna(x):
-        return np.nan
+        return float("nan")
     s = str(x).strip()
     if s.endswith('%'):
         return float(s[:-1]) / 100.0
@@ -22,7 +21,7 @@ def parse_value(x):
     try:
         return float(s)
     except:
-        return np.nan
+        return float("nan")
 
 @st.cache_data
 def load_data():
@@ -68,7 +67,6 @@ st.markdown("""
 - **date**: data del giorno (per eventuale raggruppamento)
 """)
 
-# seleziono e ordino le colonne esattamente come da screenshot
 cols_pre = [
     "datetime", "event",
     "pre_pips", "pre_max_pips", "pre_min_pips", "pre_mean_pips", "pre_sum_pips",
