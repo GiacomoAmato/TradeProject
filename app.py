@@ -32,8 +32,8 @@ def load_data():
         df_macro[col + "_val"] = df_macro[col].map(parse_value)
 
     # 2) returns pre / post
-    df_pre  = pd.read_csv("pre_m1_returns_eu_2.csv", parse_dates=["datetime"])
-    df_post = pd.read_csv("post_m1_returns_eu_2.csv", parse_dates=["datetime"])
+    df_pre  = pd.read_csv("pre_m1_returns_eu_3.csv", parse_dates=["datetime"])
+    df_post = pd.read_csv("post_m1_returns_eu_3.csv", parse_dates=["datetime"])
 
     # 3) merge per event+timestamp
     df_pre  = df_pre.merge(
