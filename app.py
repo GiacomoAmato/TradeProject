@@ -27,13 +27,13 @@ def parse_value(x):
 @st.cache_data
 def load_data():
     # 1) macro
-    df_macro = pd.read_csv("macro_multi_2019_EU.csv", parse_dates=["datetime"])
+    df_macro = pd.read_csv("macro_multi_2019_EU_fixed.csv", parse_dates=["datetime"])
     for col in ["actual", "forecast", "previous"]:
         df_macro[col + "_val"] = df_macro[col].map(parse_value)
 
     # 2) returns pre / post
-    df_pre  = pd.read_csv("pre_m1_returns_eu_4.csv", parse_dates=["datetime"])
-    df_post = pd.read_csv("post_m1_returns_eu_4.csv", parse_dates=["datetime"])
+    df_pre  = pd.read_csv("pre_m1_returns_eu_5.csv", parse_dates=["datetime"])
+    df_post = pd.read_csv("post_m1_returns_eu_5.csv", parse_dates=["datetime"])
 
     # 3) merge per event+timestamp
     df_pre  = df_pre.merge(
