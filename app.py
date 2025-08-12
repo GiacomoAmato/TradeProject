@@ -33,7 +33,7 @@ def load_data():
 
     # 2) returns pre / post
     df_pre  = pd.read_csv("pre_m1_returns_eu_5.csv", parse_dates=["datetime"])
-    df_post = pd.read_csv("post_m1_returns_eu_7.csv", parse_dates=["datetime"])
+    df_post = pd.read_csv("post_m1_returns_eu_8.csv", parse_dates=["datetime"])
 
     # 3) merge per event+timestamp
     df_pre  = df_pre.merge(
